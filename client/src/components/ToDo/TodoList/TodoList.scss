@@ -1,0 +1,66 @@
+@import "../../../styles/base.scss";
+
+.list {
+  width: 95%;
+}
+
+article {
+  display: grid;
+  grid-template-columns: 1fr 0.5in [start] 1.25in 5in 1.25in [end] 0.5in 1fr;
+}
+
+article * {
+  grid-column: start / end;
+}
+
+@media (max-width: 8.5in) {
+  article {
+    grid-template-columns: 1fr 5% [start] 15% 60% 15% [end] 5% 1fr;
+  }
+}
+
+.button.selected {
+  color: $white;
+  background: $gray;
+}
+
+.button.clear {
+  float: right;
+  color: $white;
+  background: $red;
+}
+
+.dropdown {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $gray;
+  background-color: $white;
+  padding: 1rem;
+  transform: translate(-9rem, 1.5rem);
+
+  p {
+    width: 140px;
+    color: $darkGray;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 12px;
+  }
+
+  li {
+    width: 140px;
+    padding: 1rem;
+    color: $black;
+    background-color: $white;
+    transition: all 0.25s ease 0s;
+    font-size: 14px;
+
+    &:hover {
+      cursor: pointer;
+      color: $lightBlue;
+      background-color: $lighterGray;
+      transition: all 0.25s ease 0s;
+    }
+  }
+}
+
